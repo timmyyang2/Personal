@@ -1,3 +1,5 @@
+import java.awt.List;
+import java.util.ArrayList;
 
 public class AP1 {
 
@@ -41,5 +43,47 @@ public class AP1 {
 				  return false;
 				}
 
+	public String[] wordsFront(String[] words, int n) {
+		  return java.util.Arrays.copyOfRange(words, 0, n);
+		}
+	
+	public ArrayList<String> wordsWithoutList(String[] words, int len) {
+		  ArrayList<String> wordsList = new ArrayList<String>();
+		  for(int i=0;i<words.length;i++){
+		    if(words[i].length()!=len){
+		      wordsList.add(words[i]);
+		    }
+		  }
+		  return wordsList;
+		}
+
+	public boolean hasOne(int n) {
+		  String one = Integer.toString(n);
+		  return one.contains("1");
+		}
+	
+	public boolean hasOne1(int n) {
+		  do{
+		    int result = n/10;
+		    int remainder = n%10;
+		    if(remainder == 1){
+		      return true;
+		    }else{
+		      n = result;
+		    }
+		  }while(n != 0);
+		  return false;
+		}
+	
+	public boolean hasOne2(int n) {
+		  while(n%10!=0||n/10>0){
+		    if(n%10==1){
+		      return true;
+		    }else{
+		      n = n / 10;
+		    }
+		  }
+		  return false;
+		}
 
 }

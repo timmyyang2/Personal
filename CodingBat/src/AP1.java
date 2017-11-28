@@ -85,17 +85,16 @@ public class AP1 {
 		  }
 		  return false;
 		}
-
 	public int[] copyEvens(int[] nums, int count) {
-  int index = 0;
-  int[] even = new int[count];
-  for(int i=0;i<nums.length;i++){
-    if(nums[i]%2==0 && index<count){
-      even[index] = nums[i];
-      index++;
-    }
-  }
-  return even;
-}
+		int index = 0;
+		int[] even = new int[count];
+		for(int i=0;i<nums.length;i++){
+			if(nums[i]%2==0 && index<count){
+				even[index] = nums[i];
+				index++;
+			}
+		}
+		return even;
+	}
 
 }

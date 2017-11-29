@@ -97,4 +97,16 @@ public class AP1 {
 		return even;
 	}
 
+	public int[] copyEndy(int[] nums, int count) {
+		  int index = 0;
+				int[] endy = new int[count];
+				for(int i=0;i<nums.length;i++){
+					if((nums[i]>=0 && nums[i]<=10 || nums[i]>=90 && nums[i]<=100) && index<count){
+						endy[index] = nums[i];
+						index++;
+					}
+				}
+				return endy;
+		}
+
 }

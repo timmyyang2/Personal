@@ -3,6 +3,7 @@ package com.dma;
 public class Fibonacci {
 	
 	public static int fibonacci(int counter){
+
 		  if(counter==0){
 		    return 0;
 		  }
@@ -15,7 +16,11 @@ public class Fibonacci {
 		}
 
 		public static void main(String[] args){
-		 System.out.println(fibonacci(2903)); 
+			System.out.println("Starting ...");
+			for(int i=0; i<=40; i++) { 
+				System.out.println(i+": "+fibonacci(i));
+			}
+			System.out.println("Finished.");
 		}
 
 }

@@ -108,5 +108,18 @@ public class AP1 {
 				}
 				return endy;
 		}
+	
+	public int matchUp(String[] a, String[] b) {
+		  int count = 0;
+		  for(int i=0; i<a.length; i++){
+		    String one = a[i];
+		    String two = b[i];
+		    if((one.length()>0 && two.length()>0) && (a[i].charAt(0) == b[i].charAt(0))){
+		      count++;
+		    }
+		  }
+		  return count;
+		}
+
 
 }

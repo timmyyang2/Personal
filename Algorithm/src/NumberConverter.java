@@ -163,5 +163,14 @@ public class NumberConverter {
 		System.out.println("Hex to decimal: "+ hexToDecimal(hexString));
 		System.out.println("Hex to binary: "+ hexToBinary(hexString));
 		System.out.println("------------------------------------");
+		
+		System.out.println("Decimal -> Binary: "+Integer.toBinaryString(20959));
+		System.out.println("Binary -> Decimal: "+Integer.parseInt("101000111011111", 2));
+		
+		System.out.println("Decimal -> Hex: "+Integer.toHexString(20959));
+		System.out.println("Hex -> Decimal:" + Integer.parseInt("51DF", 16));
+		
+		System.out.println("Binary -> Hex: "+ Integer.toHexString(Integer.parseInt("101000111011111", 2)));
+		System.out.println("Hex -> Binary: "+ Integer.toBinaryString(Integer.parseInt("51DF", 16)));
 	}
 }

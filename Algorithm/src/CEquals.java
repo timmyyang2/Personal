@@ -1,4 +1,4 @@
-package com.dma;
+
 
 public class CEquals {
 

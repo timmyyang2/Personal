@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class ParenthesesAlignment2 {
-	
+
 	public static boolean bracketMatch(String input) {	
 		ArrayList<Character> bracket = new ArrayList<Character>();
 		for(int i=0; i<input.length(); i++) {

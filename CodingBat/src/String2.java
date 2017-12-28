@@ -124,5 +124,17 @@ public class String2 {
 			
 		}
 
-
+		public boolean xyzMiddle(String str) {
+			  if(str.length()<3){ 
+			    return false;
+			  }
+			  int m = str.length()/2-2;
+			  int a = str.indexOf("xyz", m);
+			  int b = a + 2;
+			  int c = str.length()-1-b;
+			  if(Math.abs(a-c) <= 1){
+			    return true;
+			  }
+			  return false;
+		}
 }

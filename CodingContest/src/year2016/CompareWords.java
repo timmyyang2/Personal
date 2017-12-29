@@ -1,3 +1,4 @@
+package year2016;
 import java.util.Arrays;
 
 public class CompareWords {

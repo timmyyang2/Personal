@@ -4,67 +4,52 @@ import java.util.ArrayList;
 public class DuckDuckGoose {
 	
 	public static ArrayList<Integer> ddgList(int n, int k){
-		ArrayList<Integer> myList = new ArrayList<Integer>();
-		ArrayList<Integer> printList = new ArrayList<Integer>();
+		ArrayList<Integer> inputList = new ArrayList<Integer>();
+		ArrayList<Integer> outputList = new ArrayList<Integer>();
 		
-		for(int i=1; i<=n; i++){
-			myList.add(i);
+		for(int j=0; j<n*n; j++) {
+			for(int i=1; i<=n; i++) {
+				inputList.add(i);
+			}
+			if(j==0) {
+				System.out.println("InputList: "+inputList);
+			}
 		}
 		
-		for(int i=k; i<=n; i++){
-		int remove = myList.remove(k-1);
-		printList.add(remove);
+		int currIndex = k-1;
+		
+		while(true) {
+			int value = inputList.get(currIndex);
+			outputList.add(value);
+			System.out.println("=== OutputList: "+outputList);
+			
+			if(outputList.size() < n) {
+				int move = 1;
+				int skip = 0;
+				int nextIndex = currIndex+1;
+				while(true){
+					int valueChecked = inputList.get(nextIndex++);
+					if(outputList.contains(valueChecked)) {
+						skip++;
+					}else {
+						move++;
+					}
+					if(move >= k) {
+						currIndex = currIndex + skip + k;
+						while(outputList.contains(inputList.get(currIndex))) {
+							currIndex++;
+						}					
+						break;
+					}
+				}
+			}else {
+				break;
+			}
 		}
-		return printList;
+		return outputList;
 	}
+	
 	public static void main(String[] args){
-		if(args.length != 2){
-			System.out.println("PASS IN N AND K!!");
-			System.exit(1);
-		}
-		ArrayList myList = DuckDuckGoose.ddgList(Integer.parseInt(args[0]), Integer.parseInt(args[1])); 
-		for(int i=0; i<myList.size(); i++){
-			//System.out.print(myList.get(i) + " ");
-		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		System.out.println("31524");
+		System.out.println("OutputList: "+ddgList(5, 3));
 	}
 }

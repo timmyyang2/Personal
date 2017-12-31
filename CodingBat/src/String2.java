@@ -121,7 +121,7 @@ public class String2 {
 			System.out.println(Integer.MAX_VALUE);
 			System.out.println(Long.MAX_VALUE);
 			System.out.println(Double.MAX_VALUE);
-			
+			  
 		}
 
 		public boolean xyzMiddle(String str) {
@@ -129,7 +129,7 @@ public class String2 {
 			    return false;
 			  }
 			  int m = str.length()/2-2;
-			  int a = str.indexOf("xyz", m);
+			  int a = str.indexOf("xyz", m);     
 			  int b = a + 2;
 			  int c = str.length()-1-b;
 			  if(Math.abs(a-c) <= 1){
@@ -144,5 +144,27 @@ public class String2 {
 			  } 
 			  return(str.substring(str.indexOf("bread")+5,str.lastIndexOf("bread")));
 		}
+
+		public boolean sameStarChar(String str) {
+			  for(int i=1; i<str.length()-1; i++){
+			    if(str.charAt(i)=='*'){
+			      if(str.charAt(i-1)!=str.charAt(i+1)){
+			      return false;
+			      }
+			    }
+			  }
+			  return true;
+			}
+		
+		public String repeatSeparator(String word, String sep, int count) {
+			  String result = word;
+			  if(count == 0){
+			    return "";
+			  }
+			  for(int i=1; i<count; i++){
+			    result = result + sep + word;
+			  }
+			  return result;
+			}
 
 }

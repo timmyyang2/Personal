@@ -7,7 +7,17 @@ public class DuckDuckGoose {
 		ArrayList<Integer> inputList = new ArrayList<Integer>();
 		ArrayList<Integer> outputList = new ArrayList<Integer>();
 		
-		for(int j=0; j<n*n; j++) {
+		if(n<=0 || k <=0) {
+			System.out.println("Invalid n and k!");
+			System.exit(1);
+		}
+		
+		int count = n;
+		if(k > n) {
+			count = k;
+		}
+		
+		for(int j=0; j<count*count; j++) {
 			for(int i=1; i<=n; i++) {
 				inputList.add(i);
 			}
@@ -50,6 +60,6 @@ public class DuckDuckGoose {
 	}
 	
 	public static void main(String[] args){
-		System.out.println("OutputList: "+ddgList(5, 3));
+		System.out.println("OutputList: "+ddgList(100, 10));
 	}
 }

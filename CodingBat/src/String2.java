@@ -166,5 +166,17 @@ public class String2 {
 			  }
 			  return result;
 			}
+		
+		public String repeatFront(String str, int n) {
+			  String result = "";
+			  if(n <= 0){
+			    return "";
+			  }
+			  for(int i=n; i>0; i--){
+			    result = result  + str.substring(0, i);
+			  }
+			  return result;
+			}
+
 
 }

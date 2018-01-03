@@ -19,7 +19,7 @@ public class PeopleOnBoat {
 			for(int i=0; i<result.size(); i++) {
 				System.out.print(result.get(i));
 			}
-			System.out.print("\n");
+			System.out.print(" ");
 			return;
 		}
 	 
@@ -31,6 +31,6 @@ public class PeopleOnBoat {
 	}
 
 	public static void main(String[] args) {
-		transport(7, 4);
+		transport(5, 3);
 	}
 }

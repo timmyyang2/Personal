@@ -3,7 +3,11 @@ package year2017;
 public class WordVertex {
 	
 	public static void printWordVertex(String inputStr) {
-		int totalCount = 2 * inputStr.length() + 1;
+		if(inputStr.isEmpty()){
+			System.out.println("Empty string");
+			return;
+		}
+		int totalCount = 2 * inputStr.length() - 1;
 		int length = inputStr.length();
 		
 		// Upper Lines
@@ -23,9 +27,10 @@ public class WordVertex {
 	private static void printCharLine(String inputStr, int i, int totalCount) {
 		String subStrFront = inputStr.substring(0, i);
 		String subStrEnd = reverseString(subStrFront);
-		char paddingChar = subStrEnd.charAt(0);
+		char paddingChar = subStrFront.charAt(subStrFront.length()-1);
+		//char paddingChar = subStrEnd.charAt(0);
 		System.out.print(subStrFront);
-		for(int j=0; j<totalCount-subStrFront.length()-subStrEnd.length()-2; j++) {
+		for(int j=0; j<totalCount-subStrFront.length()-subStrEnd.length(); j++) {
 			System.out.print(paddingChar);
 		}
 		System.out.print(subStrEnd);
@@ -40,7 +45,7 @@ public class WordVertex {
 		return reversedStr;
 	}
 	
-	public static void main(String[] argd) {
+	public static void main(String[] args) {
 		printWordVertex(new String("JOE").toUpperCase());
 	}
 }

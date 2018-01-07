@@ -133,5 +133,21 @@ public class AP1 {
 		  return count;
 		}
 
+	public String[] wordsWithout(String[] words, String target) {
+		  String[] temp = new String[words.length];
+		  int count = 0;
+		  for(int i=0; i<words.length; i++){
+		    if(!words[i].equals(target)){
+		      temp[count] = words[i];
+		      count++;
+		    }
+		  }
+		  String[] newWords = new String[count];
+		  for(int j=0; j<count; j++){
+		    newWords[j] = temp[j];
+		  }
+		  return newWords;
+		}
+
 
 }

@@ -120,6 +120,18 @@ public class AP1 {
 		  }
 		  return count;
 		}
+	
+	public int scoreUp(String[] key, String[] answers) {
+		  int count = 0;
+		  for(int i=0; i<key.length; i++){
+		    if(key[i] == answers[i]){
+		      count = count+4;
+		    }else if(key[i] != answers[i] && answers[i] != "?"){
+		      count = count-1;
+		    }
+		  }
+		  return count;
+		}
 
 
 }

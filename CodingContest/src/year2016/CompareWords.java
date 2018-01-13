@@ -15,6 +15,6 @@ public class CompareWords {
 		}
 
 	public static void main(String[] args){
-		System.out.println(CompareWords.sameLetters("apple", "papel"));
+		System.out.println(CompareWords.sameLetters("people", "lepoee"));
 	}
 }

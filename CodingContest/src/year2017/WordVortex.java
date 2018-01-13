@@ -1,6 +1,6 @@
 package year2017;
 
-public class WordVertex {
+public class WordVortex {
 	
 	public static void printWordVertex(String inputStr) {
 		if(inputStr.isEmpty()){

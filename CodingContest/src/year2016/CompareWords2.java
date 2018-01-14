@@ -16,7 +16,6 @@ public class CompareWords2 {
 			charList.remove(charObj);
 		}
 		return charList.isEmpty();
-	
 	}
 
 	public static void main(String[] args){

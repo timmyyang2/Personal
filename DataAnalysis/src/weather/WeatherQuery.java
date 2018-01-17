@@ -178,8 +178,8 @@ public class WeatherQuery {
 	
 	public static void main(String[] args) {
 		
-		//String cityId = "5090046"; // For Nashua, NH
-		String cityId = "5140405";
+		String cityId = "5090046"; // For Nashua, NH
+		//String cityId = "5140405";
 		WeatherData weatherData = getForecastWeatherForSchool(cityId);
 		ArrayList<String> weatherInfoList = weatherData.getWeatherInfoList(); 
 		for(int i=0; i<weatherInfoList.size(); i++) {

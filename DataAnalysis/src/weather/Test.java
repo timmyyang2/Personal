@@ -2,7 +2,6 @@ package weather;
 
 public class Test {
 	// Add something here.
-<<<<<<< HEAD
 	// This is a test. I'm also changing this line.
 =======
 	// This is a test. I'm changing this line.

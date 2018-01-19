@@ -47,7 +47,7 @@ public class SimpleRegressionTest {
         //System.out.println("intercept = " + simpleRegression.getIntercept());
 
         // trying to run model for unknown data
-        System.out.println("Prediction for 22= " + simpleRegression.predict(30));
+        System.out.println("Prediction for 30= " + simpleRegression.predict(30));
         //System.out.println("Significance: "+simpleRegression.getSignificance());
         System.out.println("Slope Standard Error: "+simpleRegression.getSlopeStdErr());
         System.out.println("Slope 95% Confidence Interval: "+simpleRegression.getSlopeConfidenceInterval());

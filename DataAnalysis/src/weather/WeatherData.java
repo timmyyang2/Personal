@@ -41,12 +41,12 @@ public class WeatherData {
 	
 	public void setSnowCondition(String snowCondition) {
 		if(!this.snowCondition.equals("")) {
-			if(snowCondition.equals("light snow")) {
+			if(this.snowCondition.equals("light snow")) {
 				if(snowCondition.equals("snow") || snowCondition.equals("heavy snow")) {
 					this.snowCondition = snowCondition;
 				}
 			}
-			else if(snowCondition.equals("snow")) {
+			else if(this.snowCondition.equals("snow")) {
 				if(snowCondition.equals("heavy snow")) {
 					this.snowCondition = snowCondition;
 				}

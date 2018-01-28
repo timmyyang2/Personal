@@ -162,6 +162,13 @@ public class AP1 {
 		  }
 		  return max;
 		}
-
+		
+		public int sumHeights(int[] heights, int start, int end) {
+			  int max = 0;
+			  for (int i = start; i <= end-1; i++) {
+			    max += Math.abs(heights[i] - heights[i+1]);
+			  }
+			  return max;
+			}
 
 }

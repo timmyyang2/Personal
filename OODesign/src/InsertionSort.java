@@ -6,7 +6,7 @@ public class InsertionSort {
         int[] arr2 = doInsertionSort(arr1);
         for(int i:arr2){
             System.out.print(i);
-            System.out.print(", ");
+            System.out.print(" ");
         }
     }
      

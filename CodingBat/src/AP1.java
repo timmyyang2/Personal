@@ -148,6 +148,27 @@ public class AP1 {
 		  }
 		  return newWords;
 		}
+	
+	public int scoresSpecial(int[] a, int[] b) {
+		  return largestTenMult(a) + largestTenMult(b);
+		}
 
+		private int largestTenMult(int[] array){
+		  int max = 0;
+		  for (int i = 0; i < array.length; i++) {
+		    if (array[i] > max && array[i] % 10 == 0) {
+		      max = array[i];
+		    }
+		  }
+		  return max;
+		}
+		
+		public int sumHeights(int[] heights, int start, int end) {
+			  int max = 0;
+			  for (int i = start; i <= end-1; i++) {
+			    max += Math.abs(heights[i] - heights[i+1]);
+			  }
+			  return max;
+			}
 
 }

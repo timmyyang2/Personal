@@ -193,10 +193,10 @@ public class WeatherQuery {
 		System.out.println("Weather: "+weatherData.getSnowCondition());
 		System.out.println("Snow: "+String.format( "%.2f", weatherData.getSnowVolume())+" mm/3h");
 		
-//		WeatherData weatherData2 = getCurrentWeather(cityId);
-//		ArrayList<String> weatherInfoList2 = weatherData2.getWeatherInfoList(); 
-//		for(int i=0; i<weatherInfoList2.size(); i++) {
-//			System.out.println(weatherInfoList2.get(i));
-//		}
+		WeatherData weatherData2 = getCurrentWeather(cityId);
+		ArrayList<String> weatherInfoList2 = weatherData2.getWeatherInfoList(); 
+		for(int i=0; i<weatherInfoList2.size(); i++) {
+			System.out.println(weatherInfoList2.get(i));
+		}
 	}
 }

@@ -170,5 +170,65 @@ public class AP1 {
 			  }
 			  return max;
 			}
+		
+		public int sumHeights2(int[] heights, int start, int end) {
+			  int max = 0;
+			  for (int i = start; i <= end-1; i++) {
+			    if(heights[i] - heights[i+1] < 0){
+			     max += Math.abs(heights[i] - heights[i+1]) * 2;
+			    }else{
+			    max += Math.abs(heights[i] - heights[i+1]);
+			    }
+			  }
+			  return max;
+			}
+		
+		  public int bigHeights(int[] heights, int start, int end) {
+		        int count = 0;
+					  int max = 0;
+					  for (int i = start; i <= end-1; i++) {
+					    if(Math.abs(heights[i] - heights[i+1]) >= 5){
+					     max++;
+					    }else{
+					    count++;
+					    }
+					  }
+					  return max;
+					}
+		  
+		  public int userCompare(String aName, int aId, String bName, int bId) {
+			  if(aName.equals(bName)){
+			    if(aId == bId){
+			      return 0;
+			    }else if(aId > bId){
+			      return 1;
+			    }else if(aId < bId){
+			      return -1;
+			    }
+			  }
+			  int name = aName.compareTo(bName);
+			    if(name > 0){
+			      return 1;
+			  }else if(name < 0){
+			    return -1;
+			  }else{
+			    return 0;
+			  }
+			}
+		  
+		  public int commonTwo(String[] a, String[] b) {
+			  int count = 0;
+			  String check = "";
+			  for(int i=0; i<b.length; i++){
+			    for(int j=0; j<a.length; j++){
+			      if(a[j].equals(b[i]) && !check.equals(a[j])){
+			        check = a[j];
+			        count++;
+			      }
+			    }
+			  }
+			  return count;
+			}
 
+	
 }

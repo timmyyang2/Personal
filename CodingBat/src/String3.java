@@ -76,4 +76,21 @@ public class String3 {
 		  return count;
 		}
 
+	public int maxBlock(String str) {
+		  int count = 0;
+		  for(int i=0; i<str.length(); i++){
+		    int temp = 0;
+		    for(int j=i; j<str.length(); j++){
+		      if(str.charAt(i) == str.charAt(j)){
+		        temp++;
+		      }else{
+		        break;
+		      }
+		    }
+		    if(temp>count){
+		      count = temp;
+		    }
+		  }
+		  return count;
+		}
 }

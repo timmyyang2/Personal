@@ -42,11 +42,44 @@ public class Recursion1 {
 		  return count7(n/10);
 		}
 
+	public int count8(int n) {
+		  if(n==0){
+		    return 0;
+		  }
+		  if(n%100==88){
+		    return 2+count8(n/10);
+		  }
+		  if(n%10==8){
+		    return 1+count8(n/10);
+		  }
+		  return count8(n/10);
+		}
+	
 	public static int powerN(int base, int n) {
 		  if(n==0){
 		    return 1;
 		  }
 		  return base*powerN(base, n-1);
+		}
+
+	public int countX(String str) {
+		  if(str.length()==0){
+		    return 0;
+		  }
+		  if(str.charAt(0)=='x'){
+		    return 1+countX(str.substring(1));
+		  }
+		  return countX(str.substring(1));
+		}
+
+	public int countHi(String str) {
+		  if(str.length()<2){
+		    return 0;
+		  }
+		  if(str.substring(0,2).equals("hi")){
+		    return 1+countHi(str.substring(1));
+		  }
+		  return countHi(str.substring(1));
 		}
 
 	public static void main(String[] args){

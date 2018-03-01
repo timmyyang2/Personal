@@ -82,6 +82,44 @@ public class Recursion1 {
 		  return countHi(str.substring(1));
 		}
 
+	public String changeXY(String str) {
+		  if(str.length()==0){
+		    return str;
+		  }
+		  if(str.charAt(0)=='x'){
+		    return "y"+changeXY(str.substring(1));
+		  }
+		  return str.charAt(0)+changeXY(str.substring(1));
+		}
+
+	public String changePi(String str) {
+		  if(str.length()==0 || str.length()<2){
+		    return str;
+		  }
+		  if(str.charAt(0)=='p' && str.charAt(1)=='i'){
+		    return "3.14"+changePi(str.substring(2));
+		  }
+		  return str.charAt(0)+changePi(str.substring(1));
+		}
+	
+	public String noX(String str) {
+		  if(str.length()==0){
+		    return str;
+		  }
+		  if(str.charAt(0)=='x'){
+		    return noX(str.substring(1));
+		  }
+		   return str.charAt(0)+noX(str.substring(1));
+		}
+
+	public String allStar(String str) {
+		  if(str.equals("") || str.length()==1){
+		    return str;
+		  }
+		  return str.charAt(0) + "*" + allStar(str.substring(1));
+		}
+
+
 	public static void main(String[] args){
 		System.out.println(powerN(10,5));
 	}

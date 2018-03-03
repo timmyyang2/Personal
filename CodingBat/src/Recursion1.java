@@ -111,6 +111,36 @@ public class Recursion1 {
 		  }
 		   return str.charAt(0)+noX(str.substring(1));
 		}
+	
+	public boolean array6(int[] nums, int index) {
+		  if(index>=nums.length){
+		    return false;
+		  }
+		  if(nums[index] == 6){
+		    return true;
+		  }
+		  return array6(nums, index+1);
+		}
+
+	public int array11(int[] nums, int index) {
+		  if(index>=nums.length){
+		    return 0;
+		  }
+		  if(nums[index] == 11){
+		    return 1+array11(nums, index+1);
+		  }
+		  return array11(nums, index+1);
+		}
+
+	public boolean array220(int[] nums, int index) {
+		  if(index>=nums.length-1){
+		    return false;
+		  }
+		  if(nums[index+1] == nums[index]*10){
+		    return true;
+		  }
+		  return array220(nums, index+1);
+		}
 
 	public String allStar(String str) {
 		  if(str.equals("") || str.length()==1){

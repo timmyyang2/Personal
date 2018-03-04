@@ -1,5 +1,12 @@
 
 public class Recursion1 {
+	
+	public int factorial(int n) {
+		  if(n==1){
+		    return 1;
+		  }
+		  return n * factorial(n-1);
+		}
 
 	public int bunnyEars(int bunnies) {
 		  if(bunnies==0){
@@ -8,6 +15,16 @@ public class Recursion1 {
 		  return 2+bunnyEars(bunnies-1);
 		}
 	
+	public int fibonacci(int n) {
+		  if(n==0){
+		    return 0;
+		  }
+		  if(n==1){
+		    return 1;
+		  }
+		  return fibonacci(n-1) + fibonacci(n-2);
+		}
+
 	public int bunnyEars2(int bunnies) {
 		  if(bunnies==0){
 		    return 0;
@@ -149,6 +166,66 @@ public class Recursion1 {
 		  return str.charAt(0) + "*" + allStar(str.substring(1));
 		}
 
+	public String pairStar(String str) {
+		  if(str.length()==1 || str.equals("")){
+		    return str;
+		  }
+		  if(str.charAt(0)==str.charAt(1)){
+		    return str.charAt(0)+"*"+pairStar(str.substring(1));
+		  }
+		  return str.charAt(0)+pairStar(str.substring(1));
+		}
+
+	public String endX(String str) {
+		  if(str.length()==1 || str.equals("")){
+		    return str;
+		  }
+		  if(str.charAt(0)=='x'){
+		    return endX(str.substring(1)) + str.charAt(0);
+		  }
+		   return str.charAt(0) + endX(str.substring(1));
+		}
+
+	public int countPairs(String str) {
+		  if(str.length()<3 || str.equals("")){
+		    return 0;
+			}
+			if((str.charAt(0)==str.charAt(2))){
+			  return 1+countPairs(str.substring(1));
+			}
+			return countPairs(str.substring(1));
+		}
+	
+	public int countAbc(String str) {
+		  if(str.length()<3 || str.equals("")){
+		    return 0;
+		  }
+		  if((str.charAt(0)=='a' && str.charAt(1)=='b' && str.charAt(2)=='c') ||
+		  (str.charAt(0)=='a' && str.charAt(1)=='b' && str.charAt(2)=='a')){
+		    return 1+countAbc(str.substring(1));
+		  }
+		  return countAbc(str.substring(1));
+		}
+
+	public int count11(String str) {
+		  if(str.length()<2 || str.equals("")){
+		    return 0;
+		  }
+		  if(str.charAt(0)=='1' && str.charAt(1)=='1'){
+		    return 1+count11(str.substring(2));
+		  }
+		  return count11(str.substring(1));
+		}
+
+	public String stringClean(String str) {
+		  if(str.length()<2 || str.equals("")){
+		    return str;
+		  }
+		  if(str.charAt(0)==str.charAt(1)){
+		    return stringClean(str.substring(1));
+		  }
+		  return str.charAt(0) + stringClean(str.substring(1));
+		}
 
 	public static void main(String[] args){
 		System.out.println(powerN(10,5));

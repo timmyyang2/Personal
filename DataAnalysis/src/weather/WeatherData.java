@@ -50,6 +50,8 @@ public class WeatherData {
 				if(snowCondition.equals("heavy snow")) {
 					this.snowCondition = snowCondition;
 				}
+			}else {
+				this.snowCondition = snowCondition;
 			}
 		}else {
 			this.snowCondition = snowCondition;

@@ -50,7 +50,7 @@ public class WeatherQuery {
 			 				JsonValue fieldValue = nextEntry.getValue();
 			 				if(key.equals("dt")) {
 			 					Date date = new Date(Long.parseLong(fieldValue.toString())*1000L);
-			 					if(date.toString().contains("07:00:00")) {
+			 					if(date.toString().contains("07:00:00") || date.toString().contains("08:00:00")) {
 			 						weatherData.setTime(date.toString());
 			 						weatherData.addInfo("\nSchool Time: "+ weatherData.getTime());
 			 					}else {

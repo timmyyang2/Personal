@@ -24,6 +24,6 @@ public class ParenthesesAlignment {
 	}
 	
 	public static void main(String[] args){
-		System.out.println(ParenthesesAlignment.inputValue("([{}])"));
+		System.out.println(ParenthesesAlignment.inputValue("([{()()}])"));
 	}
 }

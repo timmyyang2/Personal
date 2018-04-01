@@ -17,7 +17,7 @@ public class PrimeAllOver {
 	
 	private static void largestPrime(){
 		String greatestValue = "";
-		for(int i=1000000; i<=9999999; i++){
+		for(int i=0; i<=9999999; i++){
 			String stringValue = Integer.toString(i);
 			boolean prime = true;
 			for(int j=0; j<stringValue.length(); j++){

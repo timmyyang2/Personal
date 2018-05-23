@@ -1,6 +1,7 @@
 import java.util.Map;
+import java.util.HashMap;
 
-public class HashMap {
+public class HashMapTest {
 
 	public Map<String, String> mapBully(Map<String, String> map) {
 		  if(map.containsKey("a")){
@@ -94,7 +95,7 @@ public class HashMap {
 		}
 
 	public Map<String, Integer> word0(String[] strings) {
-		  Map<String, Integer> map = new HashMap();
+		  Map<String, Integer> map = new HashMap<String, Integer>();
 		  for (int i=0; i<strings.length; i++) {
 		    String s = strings[i];
 		    map.put(s, 0);
@@ -103,7 +104,7 @@ public class HashMap {
 		}
 
 	public Map<String, Integer> wordLen(String[] strings) {
-		  Map<String, Integer> map = new HashMap();
+		  Map<String, Integer> map = new HashMap<String, Integer>();
 		  for (int i=0; i<strings.length; i++) {
 		    String s = strings[i];
 		    map.put(s, s.length());

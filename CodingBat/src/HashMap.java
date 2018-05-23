@@ -93,5 +93,24 @@ public class HashMap {
 		  return map;
 		}
 
+	public Map<String, Integer> word0(String[] strings) {
+		  Map<String, Integer> map = new HashMap();
+		  for (int i=0; i<strings.length; i++) {
+		    String s = strings[i];
+		    map.put(s, 0);
+		  }
+		  return map;
+		}
+
+	public Map<String, Integer> wordLen(String[] strings) {
+		  Map<String, Integer> map = new HashMap();
+		  for (int i=0; i<strings.length; i++) {
+		    String s = strings[i];
+		    map.put(s, s.length());
+		  }
+		   
+		  return map;
+		}
+
 
 }

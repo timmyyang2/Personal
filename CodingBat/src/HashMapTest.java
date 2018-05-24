@@ -112,6 +112,16 @@ public class HashMapTest {
 		   
 		  return map;
 		}
+	
+	public Map<String, String> pairs(String[] strings) {
+		  Map<String, String> map = new HashMap<String, String>();
+				  for (int i=0; i<strings.length; i++) {
+				    String s = strings[i];
+				    map.put(String.valueOf(s.charAt(0)), String.valueOf(s.charAt(s.length()-1)));
+				  }
+				  return map;
+		}
+
 
 
 }

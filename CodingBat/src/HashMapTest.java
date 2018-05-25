@@ -122,6 +122,19 @@ public class HashMapTest {
 				  return map;
 		}
 
+	public Map<String, Integer> wordCount(String[] strings) {
+		  Map<String, Integer> map = new HashMap<String, Integer>();
+		  for(int i=0; i<strings.length; i++){
+		    String s = strings[i];
+		    if(map.containsKey(s)){
+		      int count = map.get(s);
+		      map.put(s, count + 1);
+		    }else{
+		      map.put(s, 1);
+		    }
+		  }
+		  return map;
+		}
 
 
 }

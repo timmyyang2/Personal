@@ -135,6 +135,21 @@ public class HashMapTest {
 		  }
 		  return map;
 		}
+	
+	public Map<String, String> firstChar(String[] strings) {
+		  Map<String, String> map = new HashMap<String, String>();
+		  for(int i=0; i<strings.length; i++){
+		    String s = String.valueOf(strings[i].charAt(0));
+		    String value = strings[i];
+		    if(map.containsKey(s)){
+		      map.put(s, map.get(s)+value);
+		    }else{
+		    map.put(s, value);
+		    }
+		  }
+		  return map;
+		}
+
 
 
 }

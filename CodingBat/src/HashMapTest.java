@@ -181,6 +181,46 @@ public class HashMapTest {
 			}
 			return strings;
 		}
+	
+	public String[] firstSwap(String[] strings) {
+		   Map<String, Integer> map = new HashMap<String, Integer>();
+				  for(int i=0; i<strings.length; i++){
+				    String key = String.valueOf(strings[i].charAt(0));
+				    if(map.containsKey(key)){
+				      if(map.get(key) != -1){
+				        int index = map.get(key);
+				        String temp = strings[i];
+						    strings[i] = strings[index];
+						    strings[index] = temp;
+						    map.put(key, -1);
+				      }
+				      }else{
+				      map.put(key,i);
+				    }
+					}
+					return strings;
+				}
+
+	public String wordAppend(String[] strings) {
+		  String result = "";
+		  Map<String, Integer> map = new HashMap<String, Integer>();
+		  
+		  for(int i=0; i<strings.length; i++){
+		    String key = strings[i];
+		    if(map.containsKey(key)){
+		      int value = map.get(key);
+		      value++;
+		      if(value % 2 == 0){
+		        result = result + key;
+		      }
+		      map.put(key, value);
+		    }else{
+		      map.put(key, 1);
+		    }
+		  }
+		  return result;
+		}
+
 
 
 }

@@ -150,6 +150,37 @@ public class HashMapTest {
 		  return map;
 		}
 
+	public Map<String, Boolean> wordMultiple(String[] strings) {
+		  
+		  Map<String, Boolean> map = new HashMap<String, Boolean>();
+		   
+		  for(int i=0; i<strings.length; i++){
+		    String s = strings[i];
+		    if(!map.containsKey(s)){
+		      map.put(s, false);
+		    }else{
+		      map.put(s, true);
+		    }
+		  }
+		  return map;
+		}
+	
+	public String[] allSwap(String[] strings) {
+		  Map<String, Integer> map = new HashMap<String, Integer>();
+		  for(int i=0; i<strings.length; i++){
+		    String key = String.valueOf(strings[i].charAt(0));
+		    if(map.containsKey(key)){
+		      int index = map.get(key);
+				  String temp = strings[i];
+				  strings[i] = strings[index];
+				  strings[index] = temp;
+				  map.remove(key);
+		    }else{
+		      map.put(key,i);
+		    }
+			}
+			return strings;
+		}
 
 
 }

@@ -14,25 +14,6 @@ public class String3 {
 		  return count;
 		}
 	
-	public boolean equalIsNot(String str) {
-		  int not = 0;
-		  int is = 0;
-		  for(int i=0; i<str.length()-2; i++){
-		    if(str.charAt(i) == 'n' && str.charAt(i+1) == 'o' && str.charAt(i+2) == 't'){
-		      not++;
-		    }
-		  }
-		  for(int j=0; j<str.length()-1; j++){
-		      if(str.charAt(j) == 'i' && str.charAt(j+1) == 's'){
-		        is++;
-		      }
-		    }
-		  if(not == is){
-		    return true;
-		  }
-		  return false;
-		}
-
 	public boolean gHappy(String str) {
 		  boolean temp = true;
 		  if(str.length() == 1 && str.charAt(0) == 'g'){
@@ -93,6 +74,27 @@ public class String3 {
 		  }
 		  return count;
 		}
+	
+
+	public boolean equalIsNot(String str) {
+		  int not = 0;
+		  int is = 0;
+		  for(int i=0; i<str.length()-2; i++){
+		    if(str.charAt(i) == 'n' && str.charAt(i+1) == 'o' && str.charAt(i+2) == 't'){
+		      not++;
+		    }
+		  }
+		  for(int j=0; j<str.length()-1; j++){
+		      if(str.charAt(j) == 'i' && str.charAt(j+1) == 's'){
+		        is++;
+		      }
+		    }
+		  if(not == is){
+		    return true;
+		  }
+		  return false;
+		}
+
 }
 
 	

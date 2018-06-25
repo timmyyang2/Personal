@@ -13,27 +13,6 @@ public class String3 {
 		  }
 		  return count;
 		}
-	
-	public boolean gHappy(String str) {
-		  boolean temp = true;
-		  if(str.length() == 1 && str.charAt(0) == 'g'){
-		    return false;
-		  }
-		  if(str.length() == 0){
-		    return true;
-		  }
-		  for(int i=1; i<str.length(); i++){
-		    if(str.charAt(i) == 'g'){
-		      if(!(str.charAt(i-1) == 'g')){
-		        temp = false;
-		      }
-		      if(i<str.length()-1 && str.charAt(i+1) == 'g'){
-		        temp = true;
-		      }
-		    }
-		  }
-		  return temp;
-		}
 
 	public int sumDigits(String str) {
 		  int count = 0;
@@ -93,6 +72,27 @@ public class String3 {
 		    }
 		  }
 		  return count;
+		}
+	
+	public boolean gHappy(String str) {
+		  boolean temp = true;
+		  if(str.length() == 1 && str.charAt(0) == 'g'){
+		    return false;
+		  }
+		  if(str.length() == 0){
+		    return true;
+		  }
+		  for(int i=1; i<str.length(); i++){
+		    if(str.charAt(i) == 'g'){
+		      if(!(str.charAt(i-1) == 'g')){
+		        temp = false;
+		      }
+		      if(i<str.length()-1 && str.charAt(i+1) == 'g'){
+		        temp = true;
+		      }
+		    }
+		  }
+		  return temp;
 		}
 
 }

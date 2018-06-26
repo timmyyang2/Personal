@@ -36,5 +36,20 @@ public class Array3 {
 		      }
 		    return nums;
 		}
+	  
+	  public int[] fix45(int[] nums) {
+		    for(int i=0; i<nums.length; i++){
+		        if(nums[i]==4){
+		          int temp = nums[i+1];
+		          nums[i+1] = 5;
+		          for(int j=i+2; j<nums.length; j++){
+		                if(nums[j] == 5){
+		                  nums[j] = temp;
+		                }
+		          }
+		        }
+		      }
+		    return nums;
+		}
 
 }

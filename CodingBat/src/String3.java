@@ -64,16 +64,6 @@ public class String3 {
 		  return false;
 		}
 	
-	public int countTriple(String str) {
-		  int count = 0;
-		  for(int i=0; i<str.length()-2; i++){
-		    if(str.charAt(i) == str.charAt(i+1) && str.charAt(i) == str.charAt(i+2)){
-		      count++;
-		    }
-		  }
-		  return count;
-		}
-	
 	public boolean gHappy(String str) {
 		  boolean temp = true;
 		  if(str.length() == 1 && str.charAt(0) == 'g'){
@@ -93,6 +83,16 @@ public class String3 {
 		    }
 		  }
 		  return temp;
+		}
+	
+	public int countTriple(String str) {
+		  int count = 0;
+		  for(int i=0; i<str.length()-2; i++){
+		    if(str.charAt(i) == str.charAt(i+1) && str.charAt(i) == str.charAt(i+2)){
+		      count++;
+		    }
+		  }
+		  return count;
 		}
 
 }

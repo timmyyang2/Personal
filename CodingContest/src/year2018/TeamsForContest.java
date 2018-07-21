@@ -6,8 +6,6 @@ import java.util.Scanner;
 public class TeamsForContest {
 	
 	public static void teams() {
-		int userInput;
-		int userInputt;
 		System.out.print("How many students?: ");
 		Scanner scanner = new Scanner(System.in);
 		int n = scanner.nextInt();

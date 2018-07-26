@@ -4,11 +4,7 @@ import java.util.Random;
 
 public class DicePair {
 	
-	//THERE ARE SOME ERRORS!!!!!!!!!!!!!!!!!!!!!
-	//PLEASE HELP FIX THEM!!!!!!!!!!!!!!!!!!!!!!
-	//AND TELL ME WHY IT IS NOT WORKING!!!!!!!!!
-	
-	static  int[] num = new int[6];
+	static int[] num = new int[6];
 	
 	public static void random() {
 		System.out.print("Yahtzee 6 roll?: ");
@@ -24,19 +20,20 @@ public class DicePair {
 	private static void checkDup() {
 		int count = 0;
 		 for(int i=0;i<num.length;i++){
-			 count = 0;
-		     for(int j=0;j<num.length;j++) {
+		     for(int j=i+1;j<num.length;j++) {
 		    	 if(num[i]==num[j]) {
 		    		 count++;
-		    		 if(count==2) {
-		    			 System.out.print(" // 1 pair program stops!");
+		    		 if(count==1) {
+		    			 System.out.print(" // pair(s) found program stops!");
 		    			 break;
-		    		 }else if(count!=2){
-		    			 System.out.print(" // no pair");
-		    			 break;
+		    		 }else{
+		    			 continue;
 		    		 }
 		    	 }
 		     }
+		 }
+		 if(count==0) {
+			 System.out.print(" // no pair");
 		 }
 	}
 

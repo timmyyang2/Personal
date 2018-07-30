@@ -5,8 +5,6 @@ import java.util.Scanner;
 
 public class GenerateCombinations {
 	
-	//ONLY PROBLEM IS THAT IT PRINTS A [] AT THE END
-	
 	public static void comb() {
 		System.out.print("Enter n: ");
 		Scanner scanner = new Scanner(System.in);
@@ -15,14 +13,14 @@ public class GenerateCombinations {
 	 
 		ArrayList<Integer> result = new ArrayList<Integer>();
 		combineNumbers(n, k, 1, result);
-		System.out.println(result);
+		if(!result.isEmpty()) {
+			System.out.println(result);
+		}
 	}
 
 	private static void combineNumbers(int n, int k, int startPos, ArrayList<Integer> result) {
-		int count = 0;
 		if (result.size() == k) {
 			for(int i=0; i<result.size(); i++) {
-				count++;
 				System.out.print(result.get(i));
 			}
 			System.out.println();

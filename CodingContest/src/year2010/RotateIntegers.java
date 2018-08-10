@@ -1,6 +1,7 @@
 package year2010;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class RotateIntegers {
@@ -12,12 +13,19 @@ public class RotateIntegers {
 		System.out.print("Input " + input + " integers?");
 		Scanner scannerr = new Scanner(System.in);
 		String number = scannerr.nextLine();
+		String[] arr = number.split(" ");
+		ArrayList<String> array = new ArrayList<String>();
 		System.out.println(number);
-		int count = 1;
-		for(int j=0; j<input-1; j++) {
-			number = number + number.charAt(j);
-			System.out.println(number.substring(count, number.length()));
-			count++;
+		for(int i=0; i<arr.length; i++) {
+			array.add(arr[i]);
+		}
+		for(int i=0; i<arr.length-1; i++) {
+			array.remove(array.get(0));
+			array.add(arr[i]);
+			for(int j=0; j<array.size(); j++) {
+				System.out.print(array.get(j) + " ");
+			}
+			System.out.println();
 		}
 	}
 

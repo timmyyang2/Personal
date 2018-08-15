@@ -1,5 +1,6 @@
 package year2008;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class WordRow {
@@ -8,9 +9,9 @@ public class WordRow {
 		System.out.print("Enter word? ");
 		Scanner scanner = new Scanner(System.in);
 		String userInput = scanner.nextLine();
-		int count = 2;
+		int count = 1;
 		for(int i=0; i<count; i++) {
-			System.out.println(i);
+			System.out.println(userInput.charAt(i));
 			count++;
 		}
 	}

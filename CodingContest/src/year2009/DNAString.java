@@ -10,8 +10,15 @@ public class DNAString {
 		Scanner scannerr = new Scanner(System.in);
 		String word = scannerr.nextLine();
 		int count = 0;
+		int index = 0;
+		String meme = "";
+		for(int i=0; i<word.length(); i++) {
+			meme = meme + '*';
+		}
 		while (str.contains(word)){
-		    str = str.replaceFirst(word, " ");
+			index = str.indexOf(word);
+		    str = str.replaceFirst(word, meme);
+		    System.out.print(index + " ");
 		    count++;
 		}
 		System.out.println();

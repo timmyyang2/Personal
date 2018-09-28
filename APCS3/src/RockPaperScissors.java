@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class RockPaperScissors {
 	
-	public static void playRPS() {
+	public static void playRPS() { //PROJECT 3.14 THERE IS A PROBLEM WITH THE "PLAY AGAIN"
 		String per = "";
 		String comp = "";
 		int compGen = 0;

@@ -1,9 +1,0 @@
-
-public class Lincoln { //project 2.1
-	
-	public static void main(String[] args) {
-		System.out.println("\"A quote by Abraham Lincoln:\"");
-		System.out.println("\"Whatever you are, be a good one.\"");
-	}
-
-}

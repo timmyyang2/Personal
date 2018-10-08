@@ -1,25 +1,25 @@
 import java.text.NumberFormat;
 
 public class Account { //PROJECT 4.1
-	
     private NumberFormat fmt = NumberFormat.getCurrencyInstance();
     private final double RATE = 0.035;
     private long acctNumber;
     private double balance;
     private String name;
 
-    public Account (String owner, long account, double initial){
+    public Account(String owner, long account, double initial) {
         name = owner;
         acctNumber = account;
         balance = initial;
     }
-    public Account(){
-
+    
+    public Account() {
         name ="N/A";
         acctNumber = 0;
         balance = 0.0;
     }
-    public double deposit (double amount){
+    
+    public double deposit (double amount) {
         if (amount < 0){
             System.out.println();
             System.out.println("Error: Deposit amount is invalid.");
@@ -30,7 +30,8 @@ public class Account { //PROJECT 4.1
         }
         return balance;
     }
-    public double withdraw (double amount, double fee){
+    
+    public double withdraw (double amount, double fee) {
         amount += fee;
         if (amount < 0){
         System.out.println();
@@ -51,17 +52,41 @@ public class Account { //PROJECT 4.1
         }
         return balance;
     }
-    public double addInterest (){
+    
+    public double addInterest () {
         balance += (balance * RATE);
         return balance;
     }
-    public double getBalance (){
+    
+    public String getName () {
+        return name;
+    }
+    
+    public double getBalance () {
         return balance;
     }
-    public long getAccountNumber (){
+    
+    public long getAccountNumber () {
         return acctNumber;
     }
-    public String toString (){
+    
+    public String toString () {
         return (acctNumber + "\t" + name + "\t" + fmt.format(balance));
+    }
+
+    public void transfer (Account from, Account to, double amount, double fee){
+        from.withdraw(amount, fee);
+        to.deposit(amount);
+    }
+	
+    public static void main(String[] args){
+        Account defaultAccount = new Account();
+        Account a = new Account("userA", 123, 200);
+        Account b = new Account("userB", 234, 500);
+        System.out.println(defaultAccount.getBalance());
+        a.withdraw(100, 5);
+        System.out.println(a.getBalance());
+        b.deposit(100);
+        System.out.println(b.getBalance());
     }
 }

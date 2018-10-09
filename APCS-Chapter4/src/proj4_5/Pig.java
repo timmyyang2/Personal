@@ -1,61 +1,62 @@
 package proj4_5;
 
 public class Pig{
-   private int goal;
+   private int target;
    private PairOfDice dice;
-   private PigPlayer computer, human, currentPlayer;
-
+   private Player computer;
+   private Player user;
+   private Player current;
+   
    public Pig(int target){
-      goal = target;
-      dice = new PairOfDice();
-      computer = new PigPlayer (20);
-      human = new PigPlayer (PigPlayer.ASK);
+      this.target = target;
+      this.dice = new PairOfDice();
+      this.computer = new Player(20);
+      this.user = new Player(Player.ASK);
    }
 
-   public void play(){
-      boolean noWinnerYet = true;
-      currentPlayer = computer;
+   public void game(){
+      boolean win = true;
+      current = computer;
       do{
          takeTurn();
-         if(currentPlayer.getPoints() >= goal) {
-            noWinnerYet = false;
-         }else if (currentPlayer == computer) {
-               currentPlayer = human;
+         if(current.getPoints() >= target) {
+            win = false;
+         }else if (current == computer) {
+               current = user;
          }else {
-               currentPlayer = computer;
+               current = computer;
          }
       }
-      while (noWinnerYet);
+      while (win == true);
 
-      announceWinner();
+      winner();
    }
 
    private void takeTurn (){
       boolean stillRolling = true;
       System.out.println ("____________________");
-      System.out.println ("Current Status:");
-      System.out.println ("   Computer: " + computer.getPoints());
-      System.out.println ("   You: " + human.getPoints());
+      System.out.println ("Current Results:");
+      System.out.println ("Computer: " + computer.getPoints());
+      System.out.println ("You: " + user.getPoints());
       while (stillRolling) {
-         stillRolling = currentPlayer.roll (dice, goal);
+         stillRolling = current.roll (dice, target);
       }
    }
 
-   private void announceWinner (){
+   private void winner (){
       System.out.println();
-      if (currentPlayer == computer) {
-         System.out.println ("The computer has won!");
+      if (current == computer) {
+         System.out.println ("Computer wins!");
       }else {
-         System.out.println ("Congratulations, you have won!");
+         System.out.println ("You win!");
       }
       System.out.println();
-      System.out.println ("Final Results:");
-      System.out.println ("   Computer: " + computer.getPoints());
-      System.out.println ("   You: " + human.getPoints());
+      System.out.println ("Computer's score: " + computer.getPoints());
+      System.out.println ("Your score: " + user.getPoints());
    }
    
    public static void main (String[] args){
-      Pig game = new Pig (100);
-      game.play();
+      Pig pig = new Pig(100);
+      pig.game();
    }
 }

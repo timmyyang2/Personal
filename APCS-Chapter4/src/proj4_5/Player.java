@@ -2,17 +2,17 @@ package proj4_5;
 
 import java.util.Scanner;
 
-public class PigPlayer{
+public class Player{
    public final static int ASK = -1;  // prompt for round termination
    private int total;  // total points accumulated in game
    private int round;  // points accumulated in current round
-   private int limit;  // pass tolerance
+   private int max;  // pass tolerance
    private static PairOfDice dice = new PairOfDice();
 
-   public PigPlayer (int max){
+   public Player (int roundMax){
       total = 0;
       round = 0;
-      limit = max;
+      max = roundMax;
    }
 
    public boolean roll (PairOfDice dice, int goal){
@@ -37,11 +37,11 @@ public class PigPlayer{
          System.out.println ("Potential Total: " + (total+round));
          if ((total+round) >= goal) {
             rollAgain = false;
-         }else if (limit == ASK){
+         }else if (max == ASK){
                System.out.print ("Take another turn (y/n)? ");
                String again = scan.nextLine();
                rollAgain = again.equalsIgnoreCase("y");
-            }else if (round >= limit) {
+            }else if (round >= max) {
                   rollAgain = false;
             }
          if (! rollAgain){

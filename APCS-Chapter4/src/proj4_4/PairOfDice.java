@@ -1,4 +1,4 @@
-package proj4_4; //project 4.4
+package proj4_4; //package project 4.4
 
 import proj4_3.Die; //imports dice class
 
@@ -10,6 +10,6 @@ public class PairOfDice { //class
 	}
 	 
 	 public int roll() { //roll method
-		return die.roll() + die2.roll(); //returns rolls
+		return die.roll() + die2.roll(); //returns sum of rolls of both dies
 	 }
 }

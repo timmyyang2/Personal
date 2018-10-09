@@ -1,4 +1,4 @@
-package proj4_5; //project 4.5
+package proj4_5; //package project 4.5
 
 import proj4_3.Die; //imports dice class
 

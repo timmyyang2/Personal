@@ -1,65 +1,64 @@
-package proj4_7;
+package proj4_7; //package project 4.7
 
-import java.util.Scanner;
+import java.util.Scanner; //imports Scanner package
 
-public class Fraction {
-	private int numer;
-	private int denom;
-	private Fraction answer;
-	
-	public Fraction(int num, int den) {
-		numer = num;
-	    denom = den;
+public class Fraction { //Fraction class
+	//defines the private variables for Fraction class
+	private int numer; //numerator
+	private int denom; //denominator
+
+	//Fraction constructor w/ parameters num and den
+	public Fraction(int num, int den) { 
+		numer = num; //assigns num to numer
+	    denom = den; //assigns den to denom
 	}
 	 
-	public int getNumer() {
-		return numer;
+	public int getNumer() { //getNumer method
+		return numer; //returns numer
 	}
 
-	public int getDenom() {
-		return denom;
+	public int getDenom() { //getDenom method
+		return denom; //returns denom
 	}
 	
-	Fraction add(Fraction x) {
-		Fraction answer;
-        if(denom == x.denom){
-        	answer = new Fraction(x.numer + numer, denom);
-        }else{
-        	int den = denom * x.getDenom();
-        	int num = numer * x.getNumer();
-        	num += x.getNumer() * denom;
-        	answer = new Fraction(num, den);
+	Fraction add(Fraction x) { //add method with a parameter of Fraction
+		Fraction answer; //defines answer as the result of addition of two Fractions
+        if(denom == x.denom){ //if denom from each Fraction is the same
+        	answer = new Fraction(x.numer + numer, denom); //creates a new Fraction by adding the two numers and keep the same denom
+        }else{ //else
+        	int den = denom * x.getDenom(); //calculates den
+        	int num = numer * x.getDenom() + x.getNumer() * denom; //calculates num 
+        	answer = new Fraction(num, den); //creates a new Fraction with the result
         }
-        return answer;
+        return answer; //returns Fraction answer
     }
 	
-    Fraction subtract(Fraction x) {
-        Fraction answer;
-        if(x.denom == denom){
-            answer = new Fraction(numer - x.numer, denom);
-        }else{
-            int den = denom / x.getDenom();
-            int num = numer / x.getNumer();
-            num -= x.getNumer() * denom;
-            answer = new Fraction(num, den);
+    Fraction subtract(Fraction x) { //subtract method with a parameter of Fraction
+        Fraction answer; //defines answer as the result of subtraction of two Fractions
+        if(x.denom == denom){ //if denom from each Fraction is the same
+            answer = new Fraction(numer - x.numer, denom); //creates a new Fraction by subtracting the second numers from the first one and keep the same denom
+        }else{ //else
+        	int den = denom * x.getDenom(); //calculates den
+        	int num = numer * x.getDenom() - x.getNumer() * denom; //calculates num 
+            answer = new Fraction(num, den); //creates a new Fraction with the result
         }
-        return answer;
+        return answer; //returns Fraction answer
     }
     
-    Fraction multiply(Fraction x) {
-        Fraction answer;
-        int num = x.numer * numer;
-        int den = x.denom * denom;
-        answer = new Fraction(num, den);
-        return answer;
+    Fraction multiply(Fraction x) { //multiply method with a parameter of Fraction
+        Fraction answer; //defines answer as the result of multiplication of two Fractions
+        int num = x.numer * numer; //calculates num
+        int den = x.denom * denom; //calculates den
+        answer = new Fraction(num, den); //creates a new Fraction with the result
+        return answer; //returns Fraction answer
     }
 
-    Fraction divide(Fraction x) {
-		Fraction answer;
-	    int num = x.numer * denom;
-	    int den = x.denom * numer;
-	    answer = new Fraction(num, den);
-	    return answer;
+    Fraction divide(Fraction x) { //divide method with a parameter of Fraction
+		Fraction answer; //defines answer as the result of division of two Fractions
+	    int num = numer * x.denom; //calculates num
+	    int den = denom * x.numer; //calculates den
+	    answer = new Fraction(num, den); //creates a new Fraction with the result
+	    return answer; //returns Fraction answer
     }
 
     public String toString() {

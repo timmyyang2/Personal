@@ -1,4 +1,4 @@
-package proj4_3; //project 4.3
+package proj4_3; //package project 4.3
 
 import java.util.Random; //Random package for number generator
 import java.util.Scanner; //Scanner package for user input
@@ -7,12 +7,12 @@ public class Die { //Die class
 	//assigns and initializes private variables
 	private final int MIN_FACES = 4; //minimum amount of die faces
 	private static Random generator = new Random(); //random number generator
-	private int numFaces;
-	private int faceValue;
+	private int numFaces; //number of faces
+	private int faceValue; //face value
 	 
 	public Die() { //Die constructor
-		numFaces = 6; //die faces is 6
-		faceValue = 1; //face value is 1
+		numFaces = 6; //die faces is 6 by default
+		faceValue = 1; //face value is 1 by default
 	}
 	 
 	public Die(int faces) { //Die constructor w/ parameter faces

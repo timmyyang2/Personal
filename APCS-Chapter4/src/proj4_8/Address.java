@@ -1,9 +1,10 @@
+package proj4_8;
 
 public class Address {
 	private String streetAddress, city, state;
-	private long zipCode;
+	private String zipCode;
 	
-	public Address (String street, String town, String st, long zip) {
+	public Address (String street, String town, String st, String zip) {
 		streetAddress = street;
 		city = town;
 		state = st;

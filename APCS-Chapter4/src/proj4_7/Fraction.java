@@ -1,3 +1,5 @@
+package proj4_7;
+
 import java.util.Scanner;
 
 public class Fraction {

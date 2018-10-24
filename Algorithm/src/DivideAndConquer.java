@@ -24,13 +24,14 @@ public class DivideAndConquer {
 		
 		int year = 2016;
 		
-		boolean isLeapYear = isLeapYear(year);
-		if(isLeapYear == true) {
-			System.out.println("Year " + year + " is a leap year" );	
-		}else{
-			System.out.println("Year " + year + " is not a leap year" );
-		}
 		
+//		boolean isLeapYear = isLeapYear(year);
+//		if(isLeapYear == true) {
+//			System.out.println("Year " + year + " is a leap year" );	
+//		}else{
+//			System.out.println("Year " + year + " is not a leap year" );
+//		}
+//		
 	 }
 	
 	public static boolean isPrimeNumber(int number) {
@@ -75,14 +76,15 @@ public class DivideAndConquer {
 			return false;
 		}
 	}
-		
-	 public static boolean isLeapYear(int year) {
-		
-		if(year % 4 == 0) {
-			return true;
-		}else{
-			return false;
-		}
-	}
+	
+//	 public static boolean isLeapYear(int year) {
+//		
+//		if(year % 4 == 0) {
+//			return true;
+//		}else{
+//			return false;
+//		}
+//	}
+	
 }
 

@@ -1,18 +1,28 @@
 
-public class TaskDriver { //PROJECT 5.5 MAY NOT BE FINISHED
+public class TaskDriver { //PROJECT 5.5 driver class for task
 	
    public static void main(String args[]) {
-      Task task = new Task("Shower");
-      task.setPriority(Priority.MIN_PRIORITY);
-      Task task2 = new Task("Eat Breakfast");
-      task2.setPriority(Priority.MAX_PRIORITY);
-      Task task3 = new Task("School");
-      task3.setPriority(2);
-      Task task4 = new Task("Homework");
-      task4.setPriority(4);
-      System.out.println(task.getName() + " priority: " + task.getPriority());
-      System.out.println(task2.getName() + " priority: " + task2.getPriority());
-      System.out.println(task3.getName() + " priority: " + task3.getPriority());
-      System.out.println(task4.getName() + " priority: " + task4.getPriority());
+	  Task task1 = new Task("eat");
+      task1.setPriority(7);
+      task1.setComplexity(10);
+
+      Task task2 = new Task("sleep");
+      task2.setPriority(1);
+      task2.setComplexity(1);
+
+      System.out.println(task1.getName());
+      System.out.println("priority: " + task1.getPriority() + " complexity: " + task1.getComplexity());
+      System.out.println("");
+      System.out.println(task2.getName());
+      System.out.println("priority: " + task2.getPriority() + " complexity: " + task2.getComplexity());
+      System.out.println("");
+
+      if (task1.compareTo(task2) == 0) {
+         System.out.println(task1.getName() + " is same priority as " + task2.getName());
+      }else if (task1.compareTo(task2) > 0) {
+            System.out.println(task1.getName() + " has more priority than " + task2.getName());
+      }else {
+            System.out.println(task2.getName() + " has more priority than " + task1.getName());
+      }
    }
 }

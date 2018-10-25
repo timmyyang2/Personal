@@ -7,7 +7,7 @@ public class Task2 implements Priority, Complexity { //PROJECT 5.4
 
    public Task2(String task) {
       this.name = name;
-      this.priority = MIN_PRIORITY;
+      this.priority = 1;
    }
 
    public String getName() {

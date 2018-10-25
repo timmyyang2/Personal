@@ -1,137 +1,101 @@
-import java.text.NumberFormat;
+import java.text.NumberFormat; //NumberFormat package for number formatting
 
-public class Account implements Lockable {
-   private NumberFormat fmt = NumberFormat.getCurrencyInstance();
+public class Account implements Lockable { //Account class implements Lockable interface
+   private NumberFormat fmt = NumberFormat.getCurrencyInstance(); //fmt variable
    private final double RATE = 0.035;  // interest rate of 3.5%
-   private long acctNumber;
-   private double balance;
-   private String name;
-   private int userKey;
-   private boolean locked;
+   private long acctNumber; //variable for acctNumber
+   private double balance; //variable for balance
+   private String name; //variable for name
+   private int userKey; //variable for userKey
+   private boolean locked; //boolean for locked condition
 
-   public Account (String owner, long account)
-   {
-      name = owner;
-      acctNumber = account;
-      balance = 0.0;
-      locked = false;
-      userKey = 0;
+   public Account (String owner, long account){ //constructor
+      name = owner; //name is owner
+      acctNumber = account; //actNumber is account
+      balance = 0.0; //balance is 0.0
+      locked = false; //locked is set to false
+      userKey = 0; //userKey is set to 0
    }
 
-   public Account (String owner, long account, double initial)
-   {
-      name = owner;
-      acctNumber = account;
-      balance = initial;
-      locked = false;
-      userKey = 0;
+   public Account (String owner, long account, double initial){ //second constructor
+      name = owner; //name is owner
+      acctNumber = account; //actNumber is account
+      balance = initial; //balance is set to initial
+      locked = false; //locked is set to false
+      userKey = 0; //userKey is set to 0
    }
    
-   public static boolean transfer (double amount, double fee, Account from, Account to)
-   {
+    public double deposit (double amount){ //deposit method
+       if (locked) { //check if locked 
+          return balance; //returns balance
+       }
+       if (amount < 0) { //deposit value is negative
+          System.out.println (); //space
+          System.out.println ("Error: Deposit amount is invalid."); //error message
+          System.out.println (acctNumber + "  " + fmt.format(amount)); //prints acctNumber and amount
+       }
+       else //else
+          balance = balance + amount; //add amount to balance
 
-      if (from.locked() || to.locked())
-          return false;
-
-       if (from.balance + fee < amount || amount < 0)
-          return false;
-
-       from.withdraw(amount, fee);
-       to.deposit(amount);
-
-       return true;
+       return balance; //return balance
     }
 
-    public double deposit (double amount)
-    {
-       if (locked)
-          return balance;
-
-       if (amount < 0)  // deposit value is negative
-       {
-          System.out.println ();
-          System.out.println ("Error: Deposit amount is invalid.");
-          System.out.println (acctNumber + "  " + fmt.format(amount));
+    public double withdraw (double amount, double fee){ //withdraw method
+       if (locked) { //check if locked
+          return balance; //returns balance
        }
-       else
-          balance = balance + amount;
-
-       return balance;
-    }
-
-    public double withdraw (double amount, double fee)
-    {
-
-       if (locked)
-          return balance;
-
-       amount += fee;
-
-       if (amount < 0)  // withdraw value is negative
-       {
-          System.out.println ();
-          System.out.println ("Error: Withdraw amount is invalid.");
-          System.out.println ("Account: " + acctNumber);
-          System.out.println ("Requested: " + fmt.format(amount));
-       }
-       else
-          if (amount > balance)  // withdraw value exceeds balance
-          {
-             System.out.println ();
-             System.out.println ("Error: Insufficient funds.");
-             System.out.println ("Account: " + acctNumber);
-             System.out.println ("Requested: " + fmt.format(amount));
-             System.out.println ("Available: " + fmt.format(balance));
-          }
-             else
-                 balance = balance - amount;
-
-           return balance;
+       amount += fee; //adds fee to amount
+       if (amount < 0) {  //withdraw value is negative
+          System.out.println (); //space
+          System.out.println ("Error: Withdraw amount is invalid."); //error message
+          System.out.println ("Account: " + acctNumber); //prints acctNumber
+          System.out.println ("Requested: " + fmt.format(amount)); //prints requested amount
+       } else if (amount > balance) { //withdraw value exceeds balance
+             System.out.println (); //space
+             System.out.println ("Error: Insufficient funds."); //error message
+             System.out.println ("Account: " + acctNumber); //prints acctNumber
+             System.out.println ("Requested: " + fmt.format(amount)); //prints requested amount
+             System.out.println ("Available: " + fmt.format(balance)); //prints available balance
+          }else //else
+                 balance = balance - amount; //subtract amount from balance
+           return balance; //returns balance
         }
 
-        public double addInterest ()
-        {
-           if (locked)
-              return balance;
-
-           balance += (balance * RATE);
-           return balance;
+        public double addInterest (){ //add interest method
+           if (locked) { //check if locked
+              return balance; //returns balance
+           }
+           balance += (balance * RATE); //adds balance * RATE to balance
+           return balance; //returns balance
         }
 
-        public double getBalance ()
-        {
-           return balance;
+        public double getBalance (){ //getBalance method
+           return balance; //returns balance
         }
 
-        public long getAccountNumber ()
-        {
-           return acctNumber;
+        public long getAccountNumber (){ //getAccountNumber method
+           return acctNumber; //returns acctNumber
         }
 
-        public String toString ()
-        {
-           return (acctNumber + "\t" + name + "\t" + fmt.format(balance));
+        public String toString (){ //toString method
+           return (acctNumber + "\t" + name + "\t" + fmt.format(balance)); //prints account info
         }
 
-        public void setKey(int key)
-        {
-           userKey = key;
+        public void setKey(int key){ //setKey method
+           userKey = key; //sets userKey == key
         }
 
-        public void lock(int key)
-        {
-           if (key == userKey)
-              locked = true;
+        public void lock(int key){ //lock method
+           if (key == userKey) //if key is equal to userKey
+              locked = true; //it is locked
         }
 
-        public void unlock(int key)
-        {
-           if (key == userKey)
-              locked = false;
+        public void unlock(int key){ //unlock method
+           if (key == userKey) //if key is equal to userKey
+              locked = false; //locked is false
         }
 
-        public boolean locked()
-        {
-           return locked;
+        public boolean locked(){ //boolean locked method
+           return locked; //returns locked
         }
      }

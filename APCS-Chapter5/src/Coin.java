@@ -45,7 +45,7 @@ public class Coin implements Lockable { //PROJECT 5.6
     }
 
     public void lock(int key) { //lock method
-    	if(userKey!=key) { //if userKey is not equal to key
+    	if(userKey==key) { //if userKey is equal to key
     		locked = true; //assign true to locked
     	}
     }

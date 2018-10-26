@@ -1,3 +1,4 @@
+package chapter5;
 import java.util.Random; //Random package for number generator
 
 public class Coin implements Lockable { //PROJECT 5.6

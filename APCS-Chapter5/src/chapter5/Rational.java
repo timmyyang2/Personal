@@ -1,3 +1,4 @@
+package chapter5;
 
 public class Rational implements Comparable { //PROJECT 5.2
 	

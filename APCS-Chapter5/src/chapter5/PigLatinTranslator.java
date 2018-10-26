@@ -1,3 +1,4 @@
+package chapter5;
 import java.util.Scanner; //Scanner package
 
 public class PigLatinTranslator { //PROJECT 5.1

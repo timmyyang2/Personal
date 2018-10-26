@@ -1,3 +1,4 @@
+package chapter5;
 
 public interface Lockable { //PROJECT 5.6
 

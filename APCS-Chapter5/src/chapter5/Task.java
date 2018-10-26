@@ -1,3 +1,4 @@
+package chapter5;
 
 public class Task implements Priority, Complexity, Comparable { //COVERS PROJECT 5.3-5.5
 	

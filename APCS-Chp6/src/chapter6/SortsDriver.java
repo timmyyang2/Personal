@@ -2,40 +2,33 @@ package chapter6;
 
 import java.util.Random;
 
-public class SortsDriver
-{ //PROJECT 6.3
-   private static final int NUM = 50,
-                            MAX = 100;
+public class SortsDriver { //PROJECT 6.3
+	
+   private static int number = 50, max = 100;
+   
+   public static void main(String args[]) {
+      Random rand = new Random();
+      int[] num = new int[number];
 
-   //-----------------------------------------------------------------
-   //  Demonstrates the descending sorts
-   //-----------------------------------------------------------------
-   public static void main (String args[])
-   {
-      Random gen = new Random();
-
-      int[] numbers = new int[NUM];
-      Integer[] objects = new Integer[NUM];
-
-      // create random numbers
-      for (int i=0; i<NUM; i++)
-         numbers[i] = gen.nextInt(MAX) + 1;
-
-      Sorts.selectionSort(numbers);
-
-      System.out.println("Selection sort of " + NUM + " random numbers in descending order:");
-      for (int i=0; i<NUM; i++)
-         System.out.print(numbers[i] + " ");
-
-      // create new set of random numbers
-      for (int i=0; i<NUM; i++)
-         numbers[i] = gen.nextInt(MAX) + 1;
-
-      Sorts.insertionSort(numbers);
-
-      System.out.println("\n\nInsertion sort of " + NUM + " random numbers in descending order:");
-      for (int i=0; i<NUM; i++)
-         System.out.print(numbers[i] + " ");
-
+      for (int i=0; i<number; i++) {
+         num[i] = rand.nextInt(number) + 1;
+      }
+      
+      Sorts.selectionSort(num);
+      System.out.println("Selection sort: " + number + " in descending order:");
+      for (int i=0; i<number; i++) {
+         System.out.print(num[i] + " ");
+      }
+      
+      for (int i=0; i<number; i++) {
+         num[i] = rand.nextInt(max) + 1;
+      }
+      Sorts.insertionSort(num);
+      System.out.println();
+      System.out.println();
+      System.out.println("Insertion sort: " + number + " in descending order:");
+      for (int i=0; i<number; i++) {
+         System.out.print(num[i] + " ");
+      }
    }
 }

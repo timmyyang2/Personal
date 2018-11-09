@@ -11,7 +11,6 @@ public class InsertionSort {
     }
      
     public static int[] doInsertionSort(int[] input){
-         
         int temp;
         for(int i=0; i<input.length; i++){
         	for(int j=i; j>0; j--){

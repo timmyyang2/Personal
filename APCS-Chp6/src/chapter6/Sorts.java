@@ -6,25 +6,25 @@ public class Sorts { //PROJECT 6.3
 	   { //selectionSort method
 	      int min, temp; //integer min and temp
 
-	      for (int index = 0; index < numbers.length-1; index++)
+	      for (int i = 0; i < numbers.length-1; i++)
 	      { //loops through numbers until the last element
-	         min = index; //assigns index to min
-	         for (int scan = index+1; scan < numbers.length; scan++) //loops through numbers until the last element from index + 1
-	            if (numbers[scan] > numbers[min])
-	               min = scan;
+	         min = i; //assigns i to min
+	         for (int j = i+1; j < numbers.length; j++) //loops through numbers until the last element from i + 1
+	            if (numbers[j] > numbers[min])
+	               min = j;
 
 	         temp = numbers[min];
-	         numbers[min] = numbers[index];
-	         numbers[index] = temp;
+	         numbers[min] = numbers[i];
+	         numbers[i] = temp;
 	      }
 	   }
 	   
 	   public static void insertionSort(int[] numbers)
 	   {
-	      for (int index = 1; index < numbers.length; index++)
+	      for (int i = 1; i < numbers.length; i++)
 	      {
-	         int key = numbers[index];
-	         int position = index;
+	         int key = numbers[i];
+	         int position = i;
 
 	         while (position > 0 && numbers[position-1] < key)
 	         {
@@ -34,6 +34,4 @@ public class Sorts { //PROJECT 6.3
 	         numbers[position] = key;
 	      }
 	   }
-
-
 }

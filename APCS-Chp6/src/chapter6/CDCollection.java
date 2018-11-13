@@ -1,14 +1,16 @@
-package chapter6;
+package chapter6; //package name
 
-import java.text.NumberFormat;
+import java.text.NumberFormat; //import number format package
 
-public class CDCollection {
+public class CDCollection { //class
 	
-   private CD[] collection;
+   //defines variables
+	private CD[] collection;
    private int count;
    private double totalValue;
    private int currentSize;
 
+   //class constructor to initialize variables
    public CDCollection ()
    {
       currentSize = 100;
@@ -17,6 +19,7 @@ public class CDCollection {
       totalValue = 0.0;
    }
    
+   //addCD method that creates new cds with the titel artist value and tracks
    public void addCD (String title, String artist, double value,
                       int tracks)
    {
@@ -29,9 +32,10 @@ public class CDCollection {
       totalValue += value;
    }
 
+   //toString method that prints out cd information
    public String toString()
    {
-      sortCD();
+      sortCD(); //sorts CDs in order
 
       NumberFormat fmt = NumberFormat.getCurrencyInstance();
 
@@ -50,6 +54,7 @@ public class CDCollection {
       return report;
    }
    
+   //increases the size of cds
    private void increaseSize ()
    {
       currentSize *= 2;
@@ -62,6 +67,7 @@ public class CDCollection {
       collection = cd;
    }
 
+   //sorts the cds using insertion sort
    private void sortCD() {
       CD[] cd = new CD[count];
       for(int i = 0; i < count; i++) {

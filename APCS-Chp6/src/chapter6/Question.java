@@ -1,7 +1,7 @@
 package chapter6;
 
 public class Question implements Complexity
-{ //PROJECT 6.9
+{ //PROJECT 6.9 & 6.10
 	
    private String question, answer;
    private int complexityLevel;

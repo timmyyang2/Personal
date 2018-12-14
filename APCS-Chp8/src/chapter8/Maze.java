@@ -5,6 +5,7 @@ public class Maze { //PROJECT 8.3
    private final int TRIED = 3;
    private final int PATH = 7;
 
+   //initializes maze 2d array
    private int[][] maze = { {1,1,1,0,1,1,0,0,0,1,1,1,1},
                             {1,0,1,1,1,0,1,1,1,1,0,0,1},
                             {0,0,0,0,1,0,1,0,1,0,1,0,0},

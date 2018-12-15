@@ -10,40 +10,40 @@ public class Blurb { //PROJECT 8.7s
 	//random numberber generator used by all functions
 	public static Random r = new Random();
 	  
+	//method to print out blurb
 	public static String Blurb() {
-		String result = Whoozit(); //A Blurb is a Whoozit
+		String result = Whoozit();
 		int number = r.nextInt(9) + 1;
-		for(int i = 0; i < number; i++) {//followed by one or more Whatzits. 
+		for(int i = 0; i < number; i++) {
 			result += Whatzit();
 		}
 		return result;
 	}
 
 	public static String Whoozit() {
-		String result = "x"; //A Whoozit is the character 'x' ...
+		String result = "x"; //sets result as x
 		int number = r.nextInt(9);
 		for(int i = 0; i < number; i++) {
-			result += "y"; //followed by zero or more 'y's.
+			result += "y"; //loops through and adds y to result
 		}
 		return result;
 	}
 
 	public static String Whatzit() {
-		String result = "q"; //A Whatzit is a 'q'
+		String result = "q"; //sets result to q
 		int number = r.nextInt(2);
-		if(number == 0) {
-			result += "z"; //followed by either a 'z' or a 'd',
-		} else {//(number == 1)
-			result += "d";
+		if(number == 0) { //if number is equal to 0
+			result += "z"; //add z to result
+		} else {
+			result += "d"; //else add d to result
 		}
-		result += Whoozit(); //followed by a Whoozit.
+		result += Whoozit(); //adds Whoozit to result
 		return result;
 	}
 
+	//main method to test program
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-	  
-		System.out.println("This program makes Blurbs.");
 		System.out.println("How many blurbs do you want?");
 		int n = scan.nextInt();
 		while(n > 0) {

@@ -4,12 +4,13 @@ public class Queens { //PROJECT 8.6
 
     int[] queens;
 	final int num = 8;
-	
+
 	//class constructor
 	public Queens() {
 		this.queens = new int[num];
 	}
 	
+
 	public boolean spot(int number, int column) {
 		for(int i = 0; i < number; i++) {
 			if(queens[i] == column) {

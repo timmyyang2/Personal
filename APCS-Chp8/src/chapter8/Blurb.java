@@ -6,7 +6,7 @@ import java.util.Random;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Blurb { //PROJECT 8.7s
+public class Blurb { //PROJECT 8.7
 	//random numberber generator used by all functions
 	public static Random r = new Random();
 	  

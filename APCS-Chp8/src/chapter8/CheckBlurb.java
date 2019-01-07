@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class CheckBlurb {
 
+	//boolean method to check conditions of whatzit characters
     private boolean whatzit(String str) {
       if(str.length() >= 3)
          if(str.charAt(0) ==  'q')
@@ -12,6 +13,7 @@ public class CheckBlurb {
       return false;
     }
 
+  //boolean method to check conditions of whoozit characters
     private boolean whoozit(String str) {
        int index = 0;
        if(str.length() < 1)
@@ -29,10 +31,12 @@ public class CheckBlurb {
             return false;
       }
      
+    //returns boolean if input is valid Blurb
       public boolean isBlurb(String str) {
             return whoozit(str);
       }
       
+      //main method to test program
       public static void main(String args[]) {
     	CheckBlurb check = new CheckBlurb();
         Scanner sc = new Scanner(System.in);

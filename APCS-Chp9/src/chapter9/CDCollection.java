@@ -4,11 +4,11 @@ public class CDCollection { //PROJECT 9.1
 	
 	private CDNode list;
 	
-	public CDCollection() {
+	public CDCollection() { //constructor that initializes list variable
 		list = null;
 	}
 	
-	public void add(CD cd) {
+	public void add(CD cd) { //add method which adds node into the list
 		CDNode node = new CDNode(cd);
 		CDNode current;
 		if(list == null)
@@ -21,7 +21,7 @@ public class CDCollection { //PROJECT 9.1
 		}
 	}
 	
-	public String toString() {
+	public String toString() { //toString method which prints out the list
 		String result = "";
 		CDNode current = list;
 		
@@ -32,17 +32,17 @@ public class CDCollection { //PROJECT 9.1
 		return result;
 	}
 	
-	private class CDNode {
+	private class CDNode { //class inside a class as a helper class
 		public CD cd;
 		public CDNode next;
 		
 		public CDNode(CD cd) {
-			cd = cd;
+			this.cd = cd;
 			next = null;
 		}
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) { //main method to print test and print out cd list
 		CDCollection cd = new CDCollection();
 		cd.add(new CD("cd1"));
 		cd.add(new CD("cd2"));

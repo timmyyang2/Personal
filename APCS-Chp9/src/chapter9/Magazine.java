@@ -1,6 +1,6 @@
 package chapter9;
 
-public class Magazine { //PROJECT 9.2
+public class Magazine implements Comparable { //PROJECT 9.2
 	
 	private String title;
 	
@@ -10,5 +10,9 @@ public class Magazine { //PROJECT 9.2
 	
 	public String toString () {
 		return title;
+	}
+
+	public int compareTo(Object o) {
+		return 0;
 	}
 }

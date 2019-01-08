@@ -37,7 +37,7 @@ public class CDCollection { //PROJECT 9.1
 		public CDNode next;
 		
 		public CDNode(CD cd) {
-			cd = cd;
+			this.cd = cd;
 			next = null;
 		}
 	}

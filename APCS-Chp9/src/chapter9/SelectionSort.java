@@ -2,7 +2,7 @@ package chapter9;
 
 //PROJECT 9.3
 
-class Node{
+class Node{ //helper class that defines the node
 	public int value;
 	public Node next;
 	public Node(int give){
@@ -10,7 +10,7 @@ class Node{
 	}
 }
 
-class List{
+class List{ //helper class that checks the values in the list
 	private int length;
 	private Node begin;
 	private Node end;
@@ -25,7 +25,7 @@ class List{
 		length++;
 	}
 
-	public void printList(){
+	public void printList(){ //method that prints the elements in the list
 		Node node = begin;
 		while(node != null){
 			System.out.print(node.value + " ");
@@ -33,7 +33,7 @@ class List{
 		}
 	}
 	
-	public void selectionSort(){
+	public void selectionSort(){ //method that does selection sort using nodes
 		for(Node node = begin; node!=null; node = node.next){
 			Node min = node;
 			for(Node node1 = node; node1!=null; node1 = node1.next){
@@ -42,13 +42,13 @@ class List{
 				}
 
 			}
-			Node temp = new Node(node.value);
+			Node temp = new Node(node.value); //swaps elements after looping
 			node.value = min.value;
 			min.value = temp.value;
 		}
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) { //main method to test and print out the elements after sorting
 		List list = new List();
 		list.addList(154);
 		list.addList(2234);
@@ -64,4 +64,3 @@ class List{
 		list.printList();
 	}
 }
-

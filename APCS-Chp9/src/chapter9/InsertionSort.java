@@ -2,7 +2,7 @@ package chapter9;
 
 //PROJECT 9.4
 
-class Node2 {
+class Node2 { //helper class that defines the node
 	int val;
 	Node2 next;
 	Node2(int x) {
@@ -11,7 +11,7 @@ class Node2 {
 	}
 }
 
-public class InsertionSort {
+public class InsertionSort { //method that does insertion sort using nodes
 	public static Node2 insertionSortList(Node2 begin) {
 		if (begin == null || begin.next == null)
 			return begin;
@@ -47,7 +47,7 @@ public class InsertionSort {
 		return newBegin;
 	}
 	
-	public static void printList(Node2 x) {
+	public static void printList(Node2 x) { //prints the list of elements
 		if(x != null){
 			System.out.print(x.val + " ");
 			while (x.next != null) {
@@ -59,7 +59,7 @@ public class InsertionSort {
  
 	}
  
-	public static void main(String[] args) {
+	public static void main(String[] args) { //main method to test and print out the elements after sorting
 		Node2 n = new Node2(223);
 		Node2 n2 = new Node2(312);
 		Node2 n3 = new Node2(41);

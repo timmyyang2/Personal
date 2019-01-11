@@ -4,11 +4,11 @@ public class MagazineList { //PROJECT 9.2
 	
 	private MagazineNode list;
 	
-	 public MagazineList() {
+	 public MagazineList() { //constructor that initializes list as null
 		 list = null;
 	 }
 
-	 public void add (Magazine mag) {
+	 public void add (Magazine mag) { //method that adds elements to magazines
 		 MagazineNode node = new MagazineNode (mag);
 		 MagazineNode current;
 		 if (list == null)
@@ -21,7 +21,7 @@ public class MagazineList { //PROJECT 9.2
 		 }
 	 }
 
-	 public String toString () {
+	 public String toString () { //toString method that prints out result
 		 String result = "";
 		 MagazineNode current = list;
 		 while (current != null) {
@@ -31,14 +31,6 @@ public class MagazineList { //PROJECT 9.2
 		 return result;
 	 }
 	 
-	 public void insert() {
-
-	 }
-	 
-	 public void delete() {
-		 
-	 }
-
 	 private class MagazineNode {
 		 public Magazine magazine;
 		 public MagazineNode next;

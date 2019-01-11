@@ -13,6 +13,7 @@ public class Magazine implements Comparable { //PROJECT 9.2
 	}
 
 	public int compareTo(Object o) { //compareTo method
-		return 0;
+		Magazine magazine = (Magazine)o;
+		return this.toString().compareTo(magazine.toString());
 	}
 }

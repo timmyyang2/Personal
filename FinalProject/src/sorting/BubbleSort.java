@@ -6,9 +6,7 @@ public class BubbleSort extends Sort {
 		super(itemCount);
 	}
 	
-	//Overrides the parent class method to do the bubble sort
-	@Override
-  	public void doSort() {
+	public void doSort() {
 		super.doSort();
 		
 		if(getItemCount() == 1) {
@@ -27,10 +25,10 @@ public class BubbleSort extends Sort {
   		}
 
   		index += 1;
-  		if (index > lastElement - 1) {
+  		if (index > last - 1) {
   			index = 0;
-  			lastElement -= 1;
-  			if (lastElement == 0) {
+  			last -= 1;
+  			if (last == 0) {
   				done = true;
   			}
   		}

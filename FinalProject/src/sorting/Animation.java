@@ -23,7 +23,7 @@ public class Animation {
 		}else if(type == 1) {
 			sort = new SelectionSort(itemCount);
 		}else if(type == 2) {
-			//sort = new InsertionSort(itemCount);
+			sort = new InsertionSort(itemCount);
 		}
 	}
 	 

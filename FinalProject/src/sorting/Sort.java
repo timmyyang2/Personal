@@ -13,7 +13,7 @@ public class Sort {
 	protected ItemBar[] itemBarArr;
 	protected ItemBar[] backupItemBarArr;
 	
-	protected int lastElement;
+	protected int last;
 	protected int index;
 	protected boolean done;
 	protected boolean restored;
@@ -24,7 +24,7 @@ public class Sort {
 		
 		itemBarArr = new ItemBar[itemCount];
 		backupItemBarArr =  new ItemBar[itemCount];
-		lastElement = (itemCount - 1);
+		last = (itemCount - 1);
 		index = 0;
 		comps = 0;
 		swaps = 0;
@@ -46,7 +46,7 @@ public class Sort {
 
 		itemBarArr = new ItemBar[size];
 		backupItemBarArr =  new ItemBar[size];
-		lastElement = (size - 1);
+		last = (size - 1);
 		index = 0;
 		comps = 0;
 		swaps = 0;
@@ -67,7 +67,7 @@ public class Sort {
   		}
   		restored = true;
 
-		lastElement = (itemBarArr.length - 1);
+		last = (itemBarArr.length - 1);
 		index = 0;
 		comps = 0;
 		swaps = 0;

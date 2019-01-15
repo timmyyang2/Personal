@@ -35,7 +35,6 @@ public class SortingUI extends Frame implements Runnable, ActionListener {
 	//images for item bars
 	private Image sortingImage;
 	private Graphics sortingGraphics;
-	private int itemBarCount = 10; 
 	private Animation animation;
 	
 	//run, pause and stopped states
@@ -61,7 +60,7 @@ public class SortingUI extends Frame implements Runnable, ActionListener {
 	
 	private UserInputDialog userInputDialog;
 	
-	private int currentItemCount = Sort.REF_BAR_NUM;
+	private int currentItemCount = 10;//Sort.REF_BAR_NUM;
 			
 	//Applet method: initialization
 	public SortingUI() {
@@ -93,7 +92,7 @@ public class SortingUI extends Frame implements Runnable, ActionListener {
 		//creates the item bar image and graphics
 		sortingImage = createImage(Animation.WIDTH, Animation.WIDTH);
 		sortingGraphics = sortingImage.getGraphics();
-		animation = new Animation(itemBarCount, 0); //bubble sort as default
+		animation = new Animation(currentItemCount, 0); //bubble sort as default
 		
 		//defines the layout and font
 		setLayout(new BorderLayout());
@@ -228,10 +227,10 @@ public class SortingUI extends Frame implements Runnable, ActionListener {
 			selectionSort.setBackupItemBarArr(animation.getSort().getBackItemBarArr());
 			animation.resetSort(selectionSort);
 		}else if(insertionSortButton.getState() == true) {
-			Sort selectionSort = new SelectionSort(currentItemCount);
-			selectionSort.setItemBarArr(animation.getSort().getItemBarArr());
-			selectionSort.setBackupItemBarArr(animation.getSort().getBackItemBarArr());
-			animation.resetSort(selectionSort);
+			Sort insertionSort = new InsertionSort(currentItemCount);
+			insertionSort.setItemBarArr(animation.getSort().getItemBarArr());
+			insertionSort.setBackupItemBarArr(animation.getSort().getBackItemBarArr());
+			animation.resetSort(insertionSort);
 		}
 	}
 	
@@ -240,6 +239,8 @@ public class SortingUI extends Frame implements Runnable, ActionListener {
 			animation = new Animation(Sort.REF_BAR_NUM, 0);
 		}else if(selectionSortButton.getState() == true) {
 			animation = new Animation(Sort.REF_BAR_NUM, 1);
+		}else if(insertionSortButton.getState() == true) {
+			animation = new Animation(Sort.REF_BAR_NUM, 2);
 		}
 	}
 	
@@ -281,7 +282,7 @@ public class SortingUI extends Frame implements Runnable, ActionListener {
 				disableButtons();
 				animation.doSort();
 				try {
-					Thread.sleep(300);
+					Thread.sleep(200);
 				}
 				catch (InterruptedException localInterruptedException) {}
 			}else {
